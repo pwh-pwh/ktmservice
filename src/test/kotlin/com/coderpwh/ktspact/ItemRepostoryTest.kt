@@ -67,7 +67,7 @@ class ItemRepostoryTest {
     @Test
     fun `test term query title contains apple and phone`() {
         var builder = NativeSearchQueryBuilder()
-        //先分词再查询
+        //先分词再查询.
         builder.withQuery(QueryBuilders.termQuery("title","apple"))
         var search = elasticsearchRestTemplate.search(builder.build(), Item::class.java)
         search.forEach {
