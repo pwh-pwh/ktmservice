@@ -16,3 +16,7 @@ spring:
     hibernate:
       ddl-auto: update
 
+  data:
+    mongodb:
+      uri: mongodb://pwh:root@159.75.211.245:27017/mytest
+

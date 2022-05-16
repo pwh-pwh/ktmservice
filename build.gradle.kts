@@ -32,6 +32,7 @@ dependencies {
     }
     implementation("org.springframework.boot:spring-boot-starter-data-redis:2.6.7")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     implementation("mysql:mysql-connector-java:8.0.28")
 // https://mvnrepository.com/artifact/com.querydsl/querydsl-apt
