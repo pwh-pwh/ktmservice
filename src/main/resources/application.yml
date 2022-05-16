@@ -1,0 +1,18 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: myktsp
+
+  redis:
+    host: 159.75.211.245
+    port: 6379
+  datasource:
+    username: root
+    password: 12345678
+    url: jdbc:mysql://159.75.211.245:3306/ktln?characterEncoding=utf-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+
