@@ -20,3 +20,9 @@ spring:
     mongodb:
       uri: mongodb://pwh:root@159.75.211.245:27017/mytest
 
+
+es:
+  url: 117.50.163.15:9200
+
+
+
