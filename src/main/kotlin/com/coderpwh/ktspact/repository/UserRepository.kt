@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional
  */
 @Repository
 interface UserRepository:CrudRepository<User,Long> {
+    fun findByUserName(userName:String):User?
     fun findUserByUserNameAndPassword(userName1:String,password1:String):User?
     fun findByUserNameLike(userName:String):List<User>?
     fun findByIncomeGreaterThan(inCome:Double):List<User>?
