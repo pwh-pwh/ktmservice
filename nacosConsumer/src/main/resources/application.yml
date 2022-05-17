@@ -1,0 +1,9 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: cusumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 159.75.211.245:8848

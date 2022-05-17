@@ -1,10 +1,9 @@
 package com.coderpwh.ktspact.config
 
-import org.springframework.context.annotation.Configuration
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity
-import org.springframework.security.config.annotation.web.builders.HttpSecurity
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+import org.springframework.context.annotation.*
+import org.springframework.security.config.annotation.method.configuration.*
+import org.springframework.security.config.annotation.web.builders.*
+import org.springframework.security.config.annotation.web.configuration.*
 
 
 /**
@@ -20,7 +19,7 @@ class WebSecurityConfig:WebSecurityConfigurerAdapter() {
             .permitAll()
             .and()
             .authorizeRequests()
-            .antMatchers("/**")
+            .antMatchers("/admin/**")
             .authenticated()
             .and()
             .csrf()

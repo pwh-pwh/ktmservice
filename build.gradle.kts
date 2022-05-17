@@ -1,4 +1,4 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.tasks.*
 
 plugins {
     id("org.springframework.boot") version "2.3.7.RELEASE"
@@ -18,12 +18,12 @@ repositories {
     maven("https://mirrors.tencent.com/nexus/repository/maven-public/")
 }
 
-
+extra["springCloudAlibabaVersion"] = "2.2.2.RELEASE"
 
 dependencies {
     implementation(kotlin("reflect"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
-
+    
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -54,8 +54,17 @@ dependencies {
     kapt("com.querydsl:querydsl-apt:${querydslVersion}:jpa")
     kapt("com.querydsl:querydsl-kotlin-codegen:${querydslVersion}")
 
+// https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-starter-alibaba-nacos-discovery
+    implementation("com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:${property("springCloudAlibabaVersion")}")
 
 
+}
+
+
+dependencyManagement {
+    imports {
+        mavenBom("com.alibaba.cloud:spring-cloud-alibaba-dependencies:${property("springCloudAlibabaVersion")}")
+    }
 }
 
 tasks.withType<Test> {
